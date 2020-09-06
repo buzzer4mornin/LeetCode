@@ -5,15 +5,15 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-        nums1 = nums[0: int(len(nums)/2)]
-        nums2 = nums[int(len(nums)/2): len(nums)]
+        nums1 = nums[0: n]
+        nums2 = nums[n: len(nums)]
         result = []
-        for i in range(int(len(nums)/2)):
+        for i in range(n):
             result.append(nums1[i])
             result.append(nums2[i])
         return result
 
 
 myobject = Solution()
-test = myobject.shuffle([1, 2, 4, 6, 2, 4], 3)
+test = myobject.shuffle([1, 2, 4, 6,1,5, 2, 4], 4)
 print(test)
