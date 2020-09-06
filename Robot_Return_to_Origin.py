@@ -1,6 +1,4 @@
-a=1
-b=-1
-mydict = {"U":a,"D":b, "R":a,"L":b}
+mydict = {"U":1,"D":-1, "R":1,"L":-1}
 class Solution(object):
     def judgeCircle(self, moves):
         """
@@ -8,7 +6,7 @@ class Solution(object):
         :rtype: bool
         """
         if(len(moves)%2>0):
-            return False
+            return false
         hor = 0
         ver = 0
         for i in moves:
@@ -16,5 +14,4 @@ class Solution(object):
                 hor = hor + mydict.get(i)
             else:
                 ver = ver + mydict.get(i)
-        if ver == 0 and hor == 0:
-            return True
+        return ver == 0 and hor == 0
