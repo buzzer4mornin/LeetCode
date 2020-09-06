@@ -12,8 +12,3 @@ class Solution(object):
             result.append(nums1[i])
             result.append(nums2[i])
         return result
-
-
-myobject = Solution()
-test = myobject.shuffle([1, 2, 4, 6,1,5, 2, 4], 4)
-print(test)
