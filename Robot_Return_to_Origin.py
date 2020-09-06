@@ -1,20 +1,24 @@
-a=1
-b=-1
-mydict = {"U":a,"D":b, "R":a,"L":b}
+from collections import Counter
+
+
 class Solution(object):
     def judgeCircle(self, moves):
         """
         :type moves: str
         :rtype: bool
         """
-        if(len(moves)%2>0):
+        if len(moves) % 2 > 0:
             return False
-        hor = 0
-        ver = 0
-        for i in moves:
-            if i == "U" or i == "D":
-                hor = hor + mydict.get(i)
-            else:
-                ver = ver + mydict.get(i)
-        if ver == 0 and hor == 0:
-            return True
+        mydict = Counter(moves)
+        if len(mydict) % 2 > 0:
+            return False
+        sum = 0
+        b = False
+        if "U" in mydict and "D" in mydict:
+            sum = sum + int(mydict.get("U")) - int(mydict.get("D"))
+            b = True
+        if "R" in mydict and "L" in mydict:
+            sum = sum + int(mydict.get("R")) - int(mydict.get("L"))
+            b = True
+        return sum == 0 and b == True
+
