@@ -6,7 +6,7 @@ class Solution(object):
         :type moves: str
         :rtype: bool
         """
-        if (len(moves) % 2 > 0):
+        if len(moves) % 2 > 0:
             return False
         mydict = Counter(moves)
         if len(mydict) % 2 > 0:
