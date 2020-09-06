@@ -7,6 +7,8 @@ class Solution(object):
         :type moves: str
         :rtype: bool
         """
+        if(len(moves)%2>0):
+            return False
         hor = 0
         ver = 0
         for i in moves:
