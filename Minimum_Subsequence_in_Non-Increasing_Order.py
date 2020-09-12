@@ -4,9 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        nums = sorted(nums, reverse=True)
+        nums = sorted(nums)
         res = []
         while sum(res) <= sum(nums):
-            res.append(nums[0])
-            nums.remove(nums[0])
+                n = nums.pop()
+                res.append(n)
         return res
+        
