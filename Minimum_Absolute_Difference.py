@@ -25,4 +25,3 @@ class Solution(object):
             else:
                 continue
         return (res)
-
